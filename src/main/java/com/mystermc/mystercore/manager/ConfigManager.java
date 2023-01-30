@@ -59,6 +59,9 @@ public class ConfigManager {
 
     public static void populateSpawnPreferences() {
         for (String uuid : config.getConfigurationSection("users").getKeys(false)) {
+            if (uuid == null) {
+                return;
+            }
             boolean preference = config.getBoolean("users." + uuid + ".joinSpawnTp");
             MysterCore.spawnPreference.put(UUID.fromString(uuid), preference);
         }

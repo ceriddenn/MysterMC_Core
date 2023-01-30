@@ -8,7 +8,4 @@ spawnLocation:
   pitch: 0
   yaw: 0
 users:
-  uuid:
-    joinSpawnTp: false
-  uuid1:
-    joinSpawnTp: true
+  c1bf2894-e0bb-459c-ae62-11b8b42225d3:

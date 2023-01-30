@@ -3,3 +3,5 @@ version: '${project.version}'
 main: com.mystermc.mystercore.main.MysterCore
 commands:
   core:
+  bedwars:
+  ps:
