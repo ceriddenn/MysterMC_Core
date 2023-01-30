@@ -1,0 +1,5 @@
+name: MysterCore
+version: '${project.version}'
+main: com.mystermc.mystercore.main.MysterCore
+commands:
+  core:

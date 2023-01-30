@@ -1,0 +1,14 @@
+prefix: "&8&l[&r&bMysterMC&r&8&l]&r "
+spawnModule: true
+spawnLocation:
+  world: "world"
+  x: 0
+  y: 0
+  z: 0
+  pitch: 0
+  yaw: 0
+users:
+  uuid:
+    joinSpawnTp: false
+  uuid1:
+    joinSpawnTp: true
