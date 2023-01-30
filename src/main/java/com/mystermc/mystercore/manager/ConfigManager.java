@@ -5,7 +5,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
 import java.io.IOException;
@@ -42,8 +41,8 @@ public class ConfigManager {
         return false;
     }
 
-    public static void savePreferences() {
-        for (Map.Entry<UUID, Boolean> element : MysterCore.spawnPreferance.entrySet()) {
+    public static void saveSpawnPreferences() {
+        for (Map.Entry<UUID, Boolean> element : MysterCore.spawnPreference.entrySet()) {
             if (doesUserExistInConfig(element.getKey())) {
                 config.getConfigurationSection("users." + element.getKey()).set("joinSpawnTp", element.getValue());
             } else {
@@ -58,10 +57,10 @@ public class ConfigManager {
         }
     }
 
-    public static void populatePreferences() {
+    public static void populateSpawnPreferences() {
         for (String uuid : config.getConfigurationSection("users").getKeys(false)) {
             boolean preference = config.getBoolean("users." + uuid + ".joinSpawnTp");
-            MysterCore.spawnPreferance.put(UUID.fromString(uuid), preference);
+            MysterCore.spawnPreference.put(UUID.fromString(uuid), preference);
         }
     }
 

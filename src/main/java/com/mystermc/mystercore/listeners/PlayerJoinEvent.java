@@ -4,8 +4,6 @@ import com.mystermc.mystercore.main.Core;
 import com.mystermc.mystercore.main.MysterCore;
 import com.mystermc.mystercore.manager.ConfigManager;
 import com.mystermc.mystercore.utils.Utils;
-import org.bukkit.Bukkit;
-import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -19,15 +17,15 @@ public class PlayerJoinEvent implements Listener {
         boolean isSpawnModuleDisabled = ConfigManager.isSpawnModuleEnabled();
         if (isSpawnModuleDisabled) {
             // check is players setting is enabled or not
-            if (MysterCore.spawnPreferance.containsKey(p.getUniqueId())) {
-                if (MysterCore.spawnPreferance.get(p.getUniqueId())) {
+            if (MysterCore.spawnPreference.containsKey(p.getUniqueId())) {
+                if (MysterCore.spawnPreference.get(p.getUniqueId())) {
                     p.teleport(ConfigManager.getSpawnLocation());
                 } else {
                     p.sendMessage(Core.getPrefix() + Core.color("&aYou were not teleported to the spawn because you have auto tp toggled off."));
                 }
             } else {
                 // add user to hashmap
-                MysterCore.spawnPreferance.put(p.getUniqueId(), true);
+                MysterCore.spawnPreference.put(p.getUniqueId(), true);
                 return;
             }
         }

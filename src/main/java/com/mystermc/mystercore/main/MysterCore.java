@@ -14,7 +14,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.util.*;
 
 public final class MysterCore extends JavaPlugin {
-    public static Map<UUID, Boolean> spawnPreferance = new HashMap<>();
+    public static Map<UUID, Boolean> spawnPreference = new HashMap<>();
     private static MysterCore instance;
 
     @Override
@@ -22,20 +22,20 @@ public final class MysterCore extends JavaPlugin {
         getLogger().info("Myster Core enabling.... please wait");
         instance = this;
         ConfigManager.setupConfig(instance);
-        ConfigManager.populatePreferences();
+        ConfigManager.populateSpawnPreferences();
         // give core an instance of main class / register
         new Core(instance);
         // register base systems
         registerEvents();
         registerCommands();
-        System.out.println(spawnPreferance.get(0));
+        System.out.println(spawnPreference.get(0));
         getLogger().info("Myster Core enabled!");
 
     }
 
     @Override
     public void onDisable() {
-        ConfigManager.savePreferences();
+        ConfigManager.saveSpawnPreferences();
     }
     public void registerEvents() {
         Bukkit.getPluginManager().registerEvents(new PlayerJoinEvent(), this);
@@ -55,7 +55,7 @@ public final class MysterCore extends JavaPlugin {
     }
 
     public static void reload() {
-        ConfigManager.savePreferences();
+        ConfigManager.saveSpawnPreferences();
         ConfigManager.setupConfig(instance);
     }
 }

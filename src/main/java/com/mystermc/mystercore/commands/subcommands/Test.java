@@ -19,9 +19,9 @@ public class Test implements CommandInterface {
             } else {
                 value = true;
             }
-            MysterCore.spawnPreferance.put(p.getUniqueId(), value);
+            MysterCore.spawnPreference.put(p.getUniqueId(), value);
             p.sendMessage(Core.getPrefix() + Core.color("&aSet your auto tp to " + value));
-            System.out.println(MysterCore.spawnPreferance);
+            System.out.println(MysterCore.spawnPreference);
         } else {
             p.sendMessage(Core.getPrefix() + Core.color("&aUSAGE: &b/core test <value>"));
         }
